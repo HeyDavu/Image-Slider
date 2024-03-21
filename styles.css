@@ -1,0 +1,84 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.text {       
+ position: fixed;
+ top: 150px; /* Ajuste conforme necessário */
+ color: #252323;
+ font-size: 65px;  
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+.container {
+    padding: 2rem;    
+    padding-top: 10%;
+}
+
+/* Define o wrapper do slider */
+.slider-wrapper {
+    position: relative; /* Posição relativa para que os elementos filhos possam ser posicionados relativamente a este */
+    max-width: 48rem; /* Define a largura máxima do wrapper */
+    margin: 0 auto; /* Centraliza o wrapper horizontalmente */
+}
+
+/* Define as propriedades do slider principal */
+.slider {
+    display: flex; /* Define o container como um flex container */
+    aspect-ratio: 16 / 9; /* Define a relação de aspecto para manter a proporção da imagem */
+    overflow-x: auto; /* Habilita a rolagem horizontal */
+    overflow-x: hidden; /* esconde a barra de navegação*/
+    scroll-snap-type: x mandatory; /* Define o tipo de rolagem e a direção obrigatória */
+    scroll-behavior: smooth; /* Define o comportamento de rolagem suave */
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25); /* Adiciona uma sombra ao slider */
+    border-radius: 0.5rem; /* Define a borda arredondada do slider */
+}
+
+/* Define as propriedades das imagens dentro do slider */
+.slider img {
+    flex: 1 0 100%; /* Define a flexibilidade da imagem */
+    scroll-snap-align: start; /* as imagens não deixam sobras ao passar de slide, cada imagem preenche 100% do slide */
+    object-fit: cover; /* Define como a imagem é redimensionada para cobrir o contêiner */
+}
+
+/* Define a navegação do slider */
+.slider-nav {
+    display: flex; /* Define o container da navegação como flexível */
+    column-gap: 2rem; /* Define o espaçamento entre as colunas da navegação */
+    position: absolute; /* Define a posição absoluta para a navegação */
+    bottom: 1.25rem; /* Define a distância entre a parte inferior do slider e a navegação */
+    left: 50%; /* Define a posição horizontal da navegação */
+    transform: translateX(-50%); /* Centraliza a navegação horizontalmente */
+    z-index: 1; /* Define a ordem de empilhamento da navegação */
+}
+
+/* Define as propriedades dos botões de navegação */
+.slider-nav a {
+    width: 0.6rem; /* Define a largura dos botões de navegação */
+    height: 0.6rem; /* Define a altura dos botões de navegação */
+    border-radius: 50%; /* Define a borda arredondada dos botões de navegação */
+    background-color: #fff; /* Define a cor de fundo dos botões de navegação */
+    opacity: 0.75; /* Define a opacidade inicial dos botões de navegação */
+    transition: opacity ease 250ms; /* Define a transição de opacidade */
+}
+
+/* Define as propriedades de hover dos botões de navegação */
+.slider-nav a:hover {
+    opacity: 1; /* Define a opacidade dos botões de navegação ao passar o mouse sobre eles */
+}
